@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme{
+  --animate-popdown: popdown 0.3s ease-out 1s forwards ;
+  @keyframes popdown{
+    100% {
+      transform: translateX(100px) translateY(100px);
+    }
   }
+  --animate-popup: popup 0.3s ease-out 1s forwards ;
+  @keyframes popup{
+    100% {
+      transform: translateX(-200px) translateY(-200px);
+    }
+  }
+  --animate-disapearpage: disapearpage 1s ease-out 2s forwards;
+
+  @keyframes disapearpage{
+    100%{
+      display: none;
+      opacity: 0%;
+    }
+  }
+
+  --animate-apearpage: apearpage 0.2s ease-in forwards;
+  @keyframes apearpage{
+    100%{
+      opacity: 100%;
+    }
+  }
+  --animate-2picture: 2picture 0.3 ease-in forwards;
+  @keyframes \2picture{
+    100%{
+      transform: translateX(-375px)
+    }
+  }
+
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+.triangle {
+	position: relative;
+	background-color: rgb(0, 0, 0);
+
 }
+.triangle:before,
+.triangle:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+.triangle,
+.triangle:before,
+.triangle:after {
+	width:  1px;
+	height: 10px;
+	border-top-right-radius: 10%;
+}
+
+.triangle {
+	transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+}
+.triangle:before {
+	transform: rotate(-135deg) skewX(-45deg)  translate(0,-50%);
+}
+.triangle:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translateX(47%) translateY(-20%) ;
+}
+
+

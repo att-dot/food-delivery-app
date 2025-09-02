@@ -1,0 +1,12 @@
+
+
+.radio-menu
+{
+  input[type=radio]{
+    display: none;
+  }
+  input:checked + .checkmark{
+    transition: all 0.3s;
+    background: #FF7622;
+  }
+}
