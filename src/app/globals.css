@@ -1,46 +1,42 @@
 @import "tailwindcss";
 
-
-
-@theme{
-  --animate-popdown: popdown 0.3s ease-out 1s forwards ;
-  @keyframes popdown{
+@theme {
+  --animate-popdown: popdown 0.3s ease-out 1s forwards;
+  @keyframes popdown {
     100% {
       transform: translateX(100px) translateY(100px);
     }
   }
-  --animate-popup: popup 0.3s ease-out 1s forwards ;
-  @keyframes popup{
+  --animate-popup: popup 0.3s ease-out 1s forwards;
+  @keyframes popup {
     100% {
       transform: translateX(-200px) translateY(-200px);
     }
   }
   --animate-disapearpage: disapearpage 1s ease-out 2s forwards;
 
-  @keyframes disapearpage{
-    100%{
+  @keyframes disapearpage {
+    100% {
       display: none;
       opacity: 0%;
     }
   }
 
   --animate-apearpage: apearpage 0.2s ease-in forwards;
-  @keyframes apearpage{
-    100%{
+  @keyframes apearpage {
+    100% {
       opacity: 100%;
     }
   }
   --animate-2picture: 2picture 0.3 ease-in forwards;
-  @keyframes \2picture{
-    100%{
-      transform: translateX(-375px)
+  @keyframes \2picture {
+    100% {
+      transform: translateX(-375px);
     }
   }
-
 }
 
-
-.triangle {
+/* .triangle {
 	position: relative;
 	background-color: rgb(0, 0, 0);
 
@@ -67,6 +63,17 @@
 }
 .triangle:after {
 	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translateX(47%) translateY(-20%) ;
+} */
+
+.triangle {
+  clip-path: polygon(0% 25%, 50% 75%, 100% 25%);
 }
 
+.category-bg {
+  clip-path: polygon(5% 0%, 0% 100%, 100% 100%, 95% 0%);
+  border-radius: 24px;
+}
 
+::-webkit-scrollbar{
+  width: 0px;
+}

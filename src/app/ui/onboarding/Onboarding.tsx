@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./radiostyle.scss";
 import Radiobutton from "./RadioButton";
 import Image from "next/image";
+import Link from "next/link";
 
 type OnboardingData = Array<{
   title: string;
@@ -145,14 +146,14 @@ export default function Onboarding({}) {
               </button>
             </>
           ) : (
-            <button
-              type="button"
-              onClick={() => {}}
-              className="w-80 h-16 box-border p-auto text-[14px] font-bold text-white bg-[#FF7622] rounded-2xl hover:bg-[#ff883e] active:outline-3 active:bg-[#ffffff] outline-[#FF7622] active:text-black transition-colors"
+            <Link
+              href={'/'}
+              className="inline-block w-[327px] h-16 box-border p-[22px_116px] text-[14px] font-bold text-white bg-[#FF7622] rounded-2xl hover:bg-[#ff883e] active:outline-3 active:bg-[#ffffff] outline-[#FF7622] active:text-black transition-colors"
             >
               GET STARTED
-            </button>
+            </Link>
           )}
+          
         </div>
       </div>
     </>
