@@ -4,7 +4,7 @@ export default function MainHeader() {
   const n = 2;
   return (
     <>
-      <header className="grid justify-center">
+      <header className="grid">
         <div className=" grid w-[327px] h-[49px] grid-cols-[63px_1fr_45px]">
           <Image
             src={"/main/Menu.png"}
