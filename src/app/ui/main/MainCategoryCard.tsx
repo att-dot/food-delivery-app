@@ -23,7 +23,7 @@ export default function MainCategoryCard({
         </div>
         <div className="w-[122px] h-[104px] absolute top-[-28] ">
           <Image
-            src={"/main/categoryBG.jpg"}
+            src={"/main/CategoryBG.jpg"}
             sizes="640px"
             fill
             alt="category picture"

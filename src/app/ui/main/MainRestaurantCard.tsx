@@ -50,7 +50,7 @@ export default function MainRestaurantCard({
 
           <div className="text-[16px] font-bold text-[#181C2E] flex gap-[9px] items-center">
             <Image
-              src={"/main/Car.png"}
+              src={"/main/car.png"}
               width={23}
               height={16}
               alt="restaurant delivery cost"
