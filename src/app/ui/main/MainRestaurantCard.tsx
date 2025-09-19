@@ -56,7 +56,7 @@ export default function MainRestaurantCard({
               alt="restaurant delivery cost"
               className="w-[23px] h-4"
             />
-            <span className="text-[14px] font-normal">{deliveryPrice}</span>
+            <span className="text-[14px] font-normal">{typeof deliveryPrice === "string"? deliveryPrice: "$" + deliveryPrice}</span>
           </div>
 
           <div className="text-[16px] font-bold text-[#181C2E] flex gap-[9px] items-center">

@@ -31,7 +31,6 @@ export default function Onboarding({}) {
       break;
   }
 
-  
   const data: OnboardingData = [
     {
       title: "All your favorites",
@@ -147,13 +146,12 @@ export default function Onboarding({}) {
             </>
           ) : (
             <Link
-              href={'/'}
+              href={"/"}
               className="inline-block w-[327px] h-16 box-border p-[22px_116px] text-[14px] font-bold text-white bg-[#FF7622] rounded-2xl hover:bg-[#ff883e] active:outline-3 active:bg-[#ffffff] outline-[#FF7622] active:text-black transition-colors"
             >
               GET STARTED
             </Link>
           )}
-          
         </div>
       </div>
     </>
