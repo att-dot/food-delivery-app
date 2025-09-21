@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function SplashAnimation() {
   return (
-    <div className="h-full overflow-hidden relative items-center justify-center flex flex-col animate-disapearpage">
+    <div className="min-h-[100vh]  overflow-hidden relative items-center justify-center flex flex-col animate-disapearpage">
       {/* className="animate-disapearpage" */}
       <Image
         src={"/Ellipse 1005.png"}

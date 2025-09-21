@@ -40,7 +40,10 @@ export default function Page({}) {
 
         <div className=" h-[62px] w-[327px] gap-2.5 flex overflow-x-auto whitespace-nowrap mt-3">
           {arr.map((el) => (
-            <div className="p-[14px_20px] leading-5 box-border h-[46px] border w-max border-[#EDEDED] rounded-4xl  origin-left flex items-center">
+            <div
+              className="p-[14px_20px] leading-5 box-border h-[46px] border w-max border-[#EDEDED] rounded-4xl  origin-left flex items-center"
+              key={el}
+            >
               {el}
             </div>
           ))}
