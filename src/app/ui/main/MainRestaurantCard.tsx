@@ -19,7 +19,7 @@ export default function MainRestaurantCard({
 }: Restaurant) {
   return (
     <>
-      <article className="h-[228px] w-full">
+      <article className="h-[228px] w-full cursor-pointer hover:scale-105 active:scale-95 active:opacity-90 transition-all">
         <div className="w-full h-[137px] relative">
           <Image
             src={"/main/RestaurantBG.png"}
@@ -45,7 +45,7 @@ export default function MainRestaurantCard({
               alt="restaurant rating"
               className="w-[20px] h-[20px]"
             />
-            <span>{grade}</span>
+            <span>{(grade + '').length === 1? grade + '.0': grade}</span>
           </div>
 
           <div className="text-[16px] font-bold text-[#181C2E] flex gap-[9px] items-center">
@@ -56,7 +56,11 @@ export default function MainRestaurantCard({
               alt="restaurant delivery cost"
               className="w-[23px] h-4"
             />
-            <span className="text-[14px] font-normal">{typeof deliveryPrice === "string"? deliveryPrice: "$" + deliveryPrice}</span>
+            <span className="text-[14px] font-normal">
+              {typeof deliveryPrice === "string"
+                ? deliveryPrice
+                : "$" + deliveryPrice}
+            </span>
           </div>
 
           <div className="text-[16px] font-bold text-[#181C2E] flex gap-[9px] items-center">

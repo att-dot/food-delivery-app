@@ -32,9 +32,9 @@ export default function MainRestaurantMenu() {
   return (
     <>
       <section className="grid grid-cols-[2fr_1fr] w-[327px] grid-rows-[auto_auto] gap-y-[20px] mt-8">
-        <h1 className="text-[20px] text-[#32343E]">Open Restaurants</h1>
+        <h1 className=" text-[20px] text-[#32343E]">Open Restaurants</h1>
         <Link
-          className="text-[333333] flex items-center gap-2.5 justify-self-end"
+          className="p-[0px_10px] rounded-[15px] hover:bg-[#f0f0f0] active:opacity-80 active:scale-95 transition-all text-[333333] flex items-center gap-2.5 justify-self-end"
           href={""}
         >
           See All

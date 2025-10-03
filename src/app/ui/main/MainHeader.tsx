@@ -1,17 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MainHeader() {
   const n = 2;
   return (
     <>
       <header className="grid">
+        <div className="absolute">
+          <Link href={'./search'}>Search</Link>
+        </div>
         <div className=" grid w-[327px] h-[49px] grid-cols-[63px_1fr_45px]">
-          <Image
-            src={"/main/Menu.png"}
-            width={45}
-            height={45}
-            alt="menu button"
-          />
+          <label htmlFor="menuButton">
+            <Image
+              src={"/main/Menu.png"}
+              width={45}
+              height={45}
+              alt="menu button"
+            />
+            <input id="menuButton" />
+          </label>
           <div className="flex flex-col gap-[3px] w-fit">
             <p className="text-[#FC6E2A] font-bold text-[12px] ">DELIVER TO</p>
             <div className=" flex  items-center gap-2 ">

@@ -9,8 +9,8 @@ export default function MainCategoryCard({
 }) {
   return (
     <>
-      <article className=" w-[147px] h-[144px] drop-shadow-xl rounded-3xl relative flex flex-col items-center">
-        <div className="category-bg bg-[#ffffff] w-[147px] h-[144px] flex items-end">
+      <article className="  w-[147px] h-[182px] pt-[px] drop-shadow-xl rounded-3xl relative flex flex-col items-center justify-end first:ml-[10px] last:mr-[15px] cursor-pointer hover:scale-105 active:scale-95 active:opacity-90 transition-all">
+        <div className="category-bg bg-[#ffffff] w-[147px] h-[144px] flex items-end justify-self-">
           <div className="grid grid-cols-[1fr_1fr] w-full box-border p-[0px_12px_15px_12px]">
             <p className="text-[18px] text-[#32343E] font-bold col-span-2">
               {foodtype}
@@ -21,7 +21,7 @@ export default function MainCategoryCard({
             </p>
           </div>
         </div>
-        <div className="w-[122px] h-[104px] absolute top-[-28] ">
+        <div className="w-[122px] h-[104px] absolute top-[10] ">
           <Image
             src={"/main/CategoryBG.jpg"}
             sizes="640px"
