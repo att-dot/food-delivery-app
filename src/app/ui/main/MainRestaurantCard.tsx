@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import ThreeDetails from "../ThreeDetails";
 
 export interface Restaurant {
   name: string;
@@ -19,7 +21,10 @@ export default function MainRestaurantCard({
 }: Restaurant) {
   return (
     <>
-      <article className="h-[228px] w-full cursor-pointer hover:scale-105 active:scale-95 active:opacity-90 transition-all">
+      <Link
+        href={`/restaurants/${name}`}
+        className="h-[228px] w-full cursor-pointer hover:scale-105 active:scale-95 active:opacity-90 transition-all"
+      >
         <div className="w-full h-[137px] relative">
           <Image
             src={"/main/RestaurantBG.png"}
@@ -36,8 +41,10 @@ export default function MainRestaurantCard({
         <div className="text-[#A0A5BA] text-[14px] mt-[5px] leading-4">
           {tags.join(" - ")}
         </div>
-        <div className="flex gap-6 mt-[14px]">
-          <div className="text-[16px] font-bold text-[#181C2E] flex gap-[4px] items-center">
+        <>
+          {" "}
+          {/* <div className="flex gap-6 mt-[14px]"> */}
+          {/* <div className="text-[16px] font-bold text-[#181C2E] flex gap-[4px] items-center">
             <Image
               src={"/main/Star.png"}
               width={20}
@@ -45,7 +52,7 @@ export default function MainRestaurantCard({
               alt="restaurant rating"
               className="w-[20px] h-[20px]"
             />
-            <span>{(grade + '').length === 1? grade + '.0': grade}</span>
+            <span>{(grade + "").length === 1 ? grade + ".0" : grade}</span>
           </div>
 
           <div className="text-[16px] font-bold text-[#181C2E] flex gap-[9px] items-center">
@@ -74,9 +81,16 @@ export default function MainRestaurantCard({
             <span className="text-[14px] font-normal">
               {Math.floor(deliveryTime / 60)} min
             </span>
-          </div>
-        </div>
-      </article>
+          </div> */}
+          {/* </div> */}
+        </>
+        <ThreeDetails
+          deliveryPrice={deliveryPrice}
+          deliveryTime={deliveryTime}
+          grade={grade}
+          className="mt-[14px]"
+        />
+      </Link>
     </>
   );
 }

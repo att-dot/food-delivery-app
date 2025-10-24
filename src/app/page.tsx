@@ -17,6 +17,7 @@ export default function Page({}) {
         <Link href={"./search"} className="text-7xl drop-shadow-xl font-extrabold text-[#111]">Search</Link>
         <Link href={"./search"} className="text-7xl drop-shadow-xl font-extrabold text-[#111]">Search</Link>
       </div>
+      <link rel="icon" href="/Logo.ico" sizes="any" />
       <div className="grid w-[375px] overflow-hidden justify-self-center box-border pl-6 pt-[5px] mt-[50px]">
         <MainHeader />
 

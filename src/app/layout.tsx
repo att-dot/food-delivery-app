@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 const sen = Sen({
-  variable: '--font-sen',
-})
+  variable: "--font-sen",
+});
 export const metadata: Metadata = {
   title: "Food delivery app",
   description: "application built by att-dot(github) to test skills",
@@ -26,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="min-h-[100vh] ">
+    <html lang="en" className="min-h-[100vh] min-w-[100vw]">
       <body
-        className={`${sen.className} bg-white antialiased min-h-[100vh] `}
+        className={`${sen.className} bg-white antialiased min-h-[100vh] w-full`}
       >
         {children}
       </body>

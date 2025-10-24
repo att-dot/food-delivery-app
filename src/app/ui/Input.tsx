@@ -1,16 +1,17 @@
 import Image from "next/image";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 
 export default function Input({
   className,
-  // value = "",
-  // onChange = () => {},
+  value,
+  setValue,
 }: {
   className: string;
-  // value: string | undefined;
-  // onChange: (() => void) | ((e: ChangeEvent<HTMLInputElement>) => void);
+  value: string;
+  setValue: Dispatch<SetStateAction<typeof value>>;
 }) {
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState(value);
+
   return (
     <div className={className}>
       <label
@@ -29,9 +30,12 @@ export default function Input({
           autoComplete="false"
           placeholder="Search dishes, restaurants"
           className="peer w-full  placeholder:text-[14px] text-[14px] placeholder:text-[#676767]  placeholder:tracking-tight tracking-tight focus-visible:outline-none focus-visible:border-b-[1px] border-[#181C2E] text-[#181C2E]"
-          value={inputValue}
+          value={value}
+          // onChange={(e) => {
+          //   setInputValue(e.currentTarget.value);
+          // }}
           onChange={(e) => {
-            setInputValue(e.currentTarget.value);
+            setValue(e.currentTarget.value);
           }}
           onKeyDown={(e) => {
             if (e.key === "Enter")
@@ -45,7 +49,7 @@ export default function Input({
           alt="clear input"
           className=" peer-placeholder-shown:invisible cursor-pointer"
           onClick={() => {
-            setInputValue("");
+            setValue("");
           }}
         />
       </label>

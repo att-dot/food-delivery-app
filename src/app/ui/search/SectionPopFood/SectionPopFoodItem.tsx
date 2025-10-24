@@ -9,7 +9,7 @@ export default function SectionPopFoodItem({
   };
 }) {
   return (
-    <article className=" w-[153px] h-[102px] drop-shadow-xl rounded-3xl relative flex flex-col items-center hover:scale-105 cursor-pointer active:opacity-90 transition-transform">
+    <article className=" w-[153px] h-[102px] drop-shadow-xl rounded-3xl relative flex flex-col items-center hover:scale-105 cursor-pointer active:opacity-90 active:scale-95 transition-transform">
       <div className="category-bg bg-[#ffffff] w-[147px] h-[144px] flex items-end">
         <div className="w-full box-border p-[0px_12px_15px_12px]">
           <p className="text-[15px] tracking-[-0.33px] text-[#32343E] font-bold">

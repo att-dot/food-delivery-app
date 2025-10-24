@@ -14,7 +14,7 @@ export default function SectionRestaurantItem({
   return (
     <article
       key={restaurant.name}
-      className="flex border-b hover:scale-105 transition-[scale_opacity] active:opacity-90 cursor-pointer border-[#EBEBEB] pb-3.5 not-first:mt-3.5"
+      className="flex border-b hover:scale-105 transition-[scale_opacity] active:opacity-90 active:scale-95 cursor-pointer border-[#EBEBEB] pb-3.5 not-first:mt-3.5"
     >
       <Image
         src={restaurant.imgURL}

@@ -1,6 +1,10 @@
 import SectionKeywordsItem from "./SectionKeywordsItem";
 
-export default function SectionKeywords() {
+export default function SectionKeywords({
+  onKeywordClicked,
+}: {
+  onKeywordClicked: (keyword: string) => void;
+}) {
   const arr: string[] = [
     "Sandwich",
     "Burgers",
@@ -17,7 +21,11 @@ export default function SectionKeywords() {
 
       <section className=" h-[62px] w-[327px] gap-2.5 flex overflow-x-auto whitespace-nowrap mt-3">
         {arr.map((keyword) => (
-          <SectionKeywordsItem keyword={keyword} key={keyword} />
+          <SectionKeywordsItem
+            keyword={keyword}
+            key={keyword}
+            onClick={onKeywordClicked}
+          />
         ))}
       </section>
     </section>
