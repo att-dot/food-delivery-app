@@ -1,3 +1,5 @@
+"use client";
+
 import ThreeDetails from "../ThreeDetails";
 import { restaurants } from "../main/MainRestaurantMenu";
 import PizzaForm from "./PizzaForm";
@@ -7,10 +9,14 @@ import AddToCart from "./AddToCart";
 import FoodPicture from "./FoodPicture";
 
 import RestaurantBtn from "./RestaurantBtn";
+import { useRef, useState } from "react";
 
 export default function FoodPageMain() {
   const { deliveryPrice, deliveryTime, grade } = restaurants[0];
   const restaNameURL = "uttora-coffe-house";
+  const [PFormData, setPFormData] = useState<FormData | undefined>(undefined);
+  const ref = useRef(null);
+
   return (
     <main className="flex flex-col mt-[44px] gap-6">
       <FoodPicture />
@@ -29,10 +35,19 @@ export default function FoodPageMain() {
         deliveryTime={deliveryTime}
         grade={grade}
       />
-      <form>
-        <PizzaForm />
+      <form
+        ref={ref}
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log(new FormData(e.currentTarget));
+          for (let [k, v] of new FormData(e.currentTarget).entries()) {
+            console.log(k, v);
+          }
+        }}
+      >
+        <PizzaForm ref={ref} setPFormData={setPFormData} />
         <Ingridients />
-        <AddToCart />
+        <AddToCart disabled={PFormData?.has("size") ? false : true} />
       </form>
     </main>
   );

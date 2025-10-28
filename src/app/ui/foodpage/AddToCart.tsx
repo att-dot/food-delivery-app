@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Button from "../onboarding/Button";
 
-export default function AddToCart() {
+export default function AddToCart({ disabled }) {
   const price = 16;
   const [value, setValue] = useState(0);
   return (
@@ -49,7 +49,7 @@ export default function AddToCart() {
       <Button
         textContent="ADD TO CART"
         className="col-span-2 justify-self-center w-[327px]"
-        disabled
+        disabled={disabled}
       />
     </div>
   );

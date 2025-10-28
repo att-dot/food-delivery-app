@@ -10,6 +10,7 @@ export default function FoodPicture() {
         sizes="327px"
         className="object-cover rounded-4xl "
         alt="food image"
+        priority={true}
       />
 
       <FavouriteBtn />
