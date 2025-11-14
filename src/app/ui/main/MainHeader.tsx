@@ -1,24 +1,75 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import NavMenu from "../NavMenu";
 
 export default function MainHeader() {
   const n = 2;
+  const [showNavMenu, setShowNavMenu] = useState(false);
   return (
     <>
       <header className="grid">
         <div className="absolute">
-          <Link href={'./search'}>Search</Link>
+          {/* <Link href={'./search'}>Search</Link> */}
         </div>
-        <div className=" grid w-[327px] h-[49px] grid-cols-[63px_1fr_45px]">
-          <label htmlFor="menuButton">
+        <div className="relative grid w-[327px] h-[49px] grid-cols-[63px_1fr_45px]">
+          <label
+            htmlFor="menuButton"
+            className=" hover:scale-105 active:scale-95 transition-transform cursor-pointer"
+          >
             <Image
               src={"/main/Menu.png"}
               width={45}
               height={45}
               alt="menu button"
             />
-            <input id="menuButton" />
+            <input
+              id="menuButton"
+              hidden
+              className="peer"
+              type="checkbox"
+              checked={showNavMenu}
+              onChange={(e) => {
+                setShowNavMenu(!showNavMenu);
+                console.log(e.currentTarget.checked);
+              }}
+            />
+            {/* {showNavMenu && */}
+            <NavMenu
+              onClose={() => setShowNavMenu(false)}
+              isClosed={!showNavMenu}
+            />
+            {/* } */}
+            {/* <div className="peer-checked:flex hidden absolut fixed top-[0px] w-full h-full  backdrop-blur-2xl z-50 flex-col justify-center items-center gap-7">
+              <Link
+                href={"./search"}
+                className="text-7xl drop-shadow-xl font-extrabold text-[#111]"
+              >
+                Search
+              </Link>
+              <Link
+                href={"./search"}
+                className="text-7xl drop-shadow-xl font-extrabold text-[#111]"
+              >
+                Search
+              </Link>
+              <Link
+                href={"./search"}
+                className="text-7xl drop-shadow-xl font-extrabold text-[#111]"
+              >
+                Search
+              </Link>
+              <Link
+                href={"./search"}
+                className="text-7xl drop-shadow-xl font-extrabold text-[#111]"
+              >
+                Search
+              </Link>
+            </div> */}
           </label>
+
           <div className="flex flex-col gap-[3px] w-fit">
             <p className="text-[#FC6E2A] font-bold text-[12px] ">DELIVER TO</p>
             <div className=" flex  items-center gap-2 ">

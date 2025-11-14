@@ -1,17 +1,36 @@
+"use client";
+
 import Image from "next/image";
 
 export default function FavouriteBtn() {
   return (
     <label
       htmlFor="favouritebtn"
-      className="absolute right-5 bottom-5 w-[37px] h-[37px]"
+      className="absolute right-5 bottom-5 w-[37px] h-[37px] drop-shadow-xl"
       role="button"
+      tabIndex={0}
+      onFocus={(ev) => {
+        ev.target.addEventListener("keydown", function g(e: KeyboardEvent){
+          console.log(23)
+          if (e.key === "Enter") {
+            if (ev.target instanceof HTMLLabelElement) {
+              ev.target.click();
+            }
+          }
+          
+          if (e.key === "Tab" ) {
+            ev.target.removeEventListener('keydown', g);
+          }
+        });
+        
+      }}
     >
       <input
         type="checkbox"
         id="favouritebtn"
         name="isFavourite"
         className="hidden peer "
+        tabIndex={0}
       />
       <Image
         src={"/FoodPage/Favourite.png"}

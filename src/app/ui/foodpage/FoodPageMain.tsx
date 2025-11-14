@@ -44,6 +44,7 @@ export default function FoodPageMain() {
             console.log(k, v);
           }
         }}
+        className="flex flex-col relative gap-[20px]"
       >
         <PizzaForm ref={ref} setPFormData={setPFormData} />
         <Ingridients />

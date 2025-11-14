@@ -26,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="min-h-[100vh] min-w-[100vw]">
+    <html lang="en" className="min-h-[100vh] min-w-[100vw] overflow-x-hidden">
       <body
-        className={`${sen.className} bg-white antialiased min-h-[100vh] w-full`}
+        className={`${sen.className} bg-white antialiased min-h-[100vh] w-full box-border p-[50px_24px_0px_24px] flex flex-col items-center jus `}
       >
         {children}
       </body>

@@ -19,10 +19,11 @@ export default function PopFoodCard({
       <div className="category-bg bg-[#ffffff] w-[153px] h-[130px] flex items-end justify-self-">
         <div className="flex flex-col grid-cols-[1fr_1fr] w-full box-border p-[0px_12px_15px_12px]">
           <p className="text-[15px] text-[#32343E] font-bold col-span-2 tracking-[-0.33px]">
-            {food}
+            {food.substring(0, 14).trim() + (food.length > 13 ? "..." : "")}
           </p>
           <p className="text-[13px] text-[#646982]">
-            {foodCategory + " restaurant"}
+            {(foodCategory + " restaurant").substring(0, 14).trim() +
+              ((foodCategory + " restaurant").length > 13 ? "..." : "")}
           </p>
           <div className=" flex justify-between items-center">
             <p className="text-[16px] text-[#32343E] tracking-[-0.33px] font-black">
@@ -42,10 +43,9 @@ export default function PopFoodCard({
                 alt="add to the cart"
                 className="size-[30px]"
                 onClick={(e) => {
-                e.stopPropagation();
-                console.log(9347892)
-                
-              }}
+                  e.stopPropagation();
+                  console.log(9347892);
+                }}
               />
             </button>
           </div>

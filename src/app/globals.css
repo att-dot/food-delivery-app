@@ -34,6 +34,19 @@
       transform: translateX(-375px);
     }
   }
+  --animate-open-menu: open-menu easy-out 0.3 forwards;
+  @keyframes open-menu {
+    100% {
+      transform: translateX(100px);
+      background-color: red;
+    }
+  }
+  --animate-close-menu: close-menu easy-out 0.3 forwards;
+  @keyframes close-menu {
+    100% {
+      transform: translateX(375px);
+    }
+  }
 }
 
 /* .triangle {
@@ -74,4 +87,17 @@
   border-radius: 24px;
 }
 
+* {
+  scrollbar-color: rgb(156, 156, 156) transparent;
+  scrollbar-width: thin;
+  scroll-snap-stop: normal;
+}
 
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
