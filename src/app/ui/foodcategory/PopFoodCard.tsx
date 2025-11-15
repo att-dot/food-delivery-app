@@ -27,7 +27,7 @@ export default function PopFoodCard({
           </p>
           <div className=" flex justify-between items-center">
             <p className="text-[16px] text-[#32343E] tracking-[-0.33px] font-black">
-              ${Math.floor(Math.random() * 100)}
+              ${100}
             </p>
             <button
               type="submit"

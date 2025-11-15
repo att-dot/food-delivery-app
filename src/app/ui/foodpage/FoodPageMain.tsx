@@ -9,14 +9,18 @@ import AddToCart from "./AddToCart";
 import FoodPicture from "./FoodPicture";
 
 import RestaurantBtn from "./RestaurantBtn";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function FoodPageMain() {
   const { deliveryPrice, deliveryTime, grade } = restaurants[0];
   const restaNameURL = "uttora-coffe-house";
   const [PFormData, setPFormData] = useState<FormData | undefined>(undefined);
-  const ref = useRef(null);
+  const ref: { current: null | HTMLFormElement } = useRef(null);
+  const [documentMounted, setDocumentMounted] = useState(false);
 
+  useEffect(() => {
+    setDocumentMounted(true);
+  }, []);
   return (
     <main className="flex flex-col mt-[44px] gap-6">
       <FoodPicture />
@@ -48,7 +52,9 @@ export default function FoodPageMain() {
       >
         <PizzaForm ref={ref} setPFormData={setPFormData} />
         <Ingridients />
-        <AddToCart disabled={PFormData?.has("size") ? false : true} />
+        {documentMounted && (
+          <AddToCart disabled={PFormData?.has("size") ? false : true} />
+        )}
       </form>
     </main>
   );

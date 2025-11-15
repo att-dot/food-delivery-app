@@ -1,11 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import { restaurants } from "./main/MainRestaurantMenu";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 export default function NavMenu({
   onClose,
   isClosed,
+  
 }: {
   onClose: () => void;
   isClosed: boolean;
@@ -16,13 +19,16 @@ export default function NavMenu({
     main: "/",
   };
 
+  // const px: { current: string } = useRef("");
+  // console.log(px);
+  // if (!isClosed) {
+  //   px.current = scrollY + "px";
+  //   document.body.style.height = "100vh";
+  // } else {
+  //   document.body.style.height = "100%";
+  //   document.body.style.top = px.current;
+  // }
 
-  if (!isClosed) {
-    document.body.style.height = "100vh";
- 
-  }else{
-    document.body.style.height = "100%";
-  }
   return createPortal(
     <div
       className={

@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Button from "../onboarding/Button";
+import { createPortal } from "react-dom";
 
-export default function AddToCart({ disabled }: {disabled: boolean}) {
+export default function AddToCart({ disabled }: { disabled: boolean }) {
   const price = 16;
   const [value, setValue] = useState(0);
-  return (
-    <div className="w-[375px] h-[184px] bg-[#F0F5FA] rounded-[24px_24px_0_0] fixed bottom-0 left-0  grid grid-cols-2 grid-rows-[48px_62px] gap-[24px] box-border p-[20px_24px] items-center">
+  return createPortal(
+    <div className="w-[375px] h-[184px] bg-[#F0F5FA] rounded-[24px_24px_0_0] fixed bottom-0  grid grid-cols-2 grid-rows-[48px_62px] gap-[24px] box-border p-[20px_24px] items-center">
       <p className="font-normal text-[28px] text-[#181C2E]">{price * value}$</p>
       <div className="w-[125px] h-[48px] flex box-border p-[12px_14px] gap-[12px] bg-[#121223] rounded-4xl justify-self-end">
         <button
@@ -51,6 +52,7 @@ export default function AddToCart({ disabled }: {disabled: boolean}) {
         className="col-span-2 justify-self-center w-[327px]"
         disabled={disabled}
       />
-    </div>
+    </div>,
+    document.body
   );
 }

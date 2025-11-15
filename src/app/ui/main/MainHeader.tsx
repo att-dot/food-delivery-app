@@ -2,12 +2,33 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NavMenu from "../NavMenu";
 
 export default function MainHeader() {
   const n = 2;
   const [showNavMenu, setShowNavMenu] = useState(false);
+  const [documentMounted, setDocumentMounted] = useState(false);
+  const px: { current: number } = useRef(0);
+
+  if (documentMounted) {
+    let bodyStyle = document.body.style;
+    if (showNavMenu) {
+      bodyStyle.position = "relative";
+      bodyStyle.top = "-" + px.current + "px";
+
+      bodyStyle.height = "100vh";
+    } else {
+      bodyStyle.height = "100%";
+      bodyStyle.position = "static";
+      bodyStyle.top = "0px";
+      scrollTo(0, px.current);
+    }
+  }
+
+  useEffect(() => {
+    setDocumentMounted(true);
+  }, []);
   return (
     <>
       <header className="grid">
@@ -33,14 +54,17 @@ export default function MainHeader() {
               checked={showNavMenu}
               onChange={(e) => {
                 setShowNavMenu(!showNavMenu);
-                console.log(e.currentTarget.checked);
+                px.current = scrollY;
               }}
             />
             {/* {showNavMenu && */}
-            <NavMenu
-              onClose={() => setShowNavMenu(false)}
-              isClosed={!showNavMenu}
-            />
+            {documentMounted && (
+              <NavMenu
+                onClose={() => setShowNavMenu(false)}
+                isClosed={!showNavMenu}
+              />
+            )}
+
             {/* } */}
             {/* <div className="peer-checked:flex hidden absolut fixed top-[0px] w-full h-full  backdrop-blur-2xl z-50 flex-col justify-center items-center gap-7">
               <Link
