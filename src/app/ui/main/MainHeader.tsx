@@ -12,7 +12,7 @@ export default function MainHeader() {
   const px: { current: number } = useRef(0);
 
   if (documentMounted) {
-    let bodyStyle = document.body.style;
+    const bodyStyle = document.body.style;
     if (showNavMenu) {
       bodyStyle.position = "relative";
       bodyStyle.top = "-" + px.current + "px";

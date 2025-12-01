@@ -43,10 +43,10 @@ export default function FoodPageMain() {
         ref={ref}
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(new FormData(e.currentTarget));
-          for (let [k, v] of new FormData(e.currentTarget).entries()) {
-            console.log(k, v);
-          }
+          // console.log(new FormData(e.currentTarget));
+          // for (let [k, v] of new FormData(e.currentTarget).entries()) {
+          //   console.log(k, v);
+          // }
         }}
         className="flex flex-col relative gap-[20px]"
       >

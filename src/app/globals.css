@@ -83,8 +83,13 @@
 }
 
 .category-bg {
-  clip-path: polygon(5% 0%, 0% 100%, 100% 100%, 95% 0%);
+  /* clip-path: polygon(5% 0%, 0% 100%, 100% 100%, 95% 0%);
   border-radius: 24px;
+  background-color: #ffffff10; */
+
+  clip-path: polygon(5% 0%, 0% 100%, 100% 100%, 95% 0%);
+  background: #ffffff;
+  border-radius: 25px;
 }
 
 * {
@@ -100,4 +105,8 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+.text-greeeen {
+  color: #059c6a;
 }
