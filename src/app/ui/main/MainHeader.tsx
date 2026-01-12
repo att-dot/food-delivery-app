@@ -29,6 +29,17 @@ export default function MainHeader() {
   useEffect(() => {
     setDocumentMounted(true);
   }, []);
+  if (documentMounted && showNavMenu) {
+    console.log(
+      document.body.querySelector("div.nav-menu")?.querySelector("button")
+        ?.parentElement
+    );
+
+    const navMenu = document.body.querySelector(
+      "dialog.nav-menu"
+    ) as HTMLDialogElement;
+    navMenu.focus();
+  }
   return (
     <>
       <header className="grid">
@@ -38,7 +49,40 @@ export default function MainHeader() {
         <div className="relative grid w-[327px] h-[49px] grid-cols-[63px_1fr_45px]">
           <label
             htmlFor="menuButton"
+            aria-expanded="false"
             className=" hover:scale-105 active:scale-95 transition-transform cursor-pointer"
+            tabIndex={0}
+            onFocus={(ev) => {
+              ev.target.addEventListener(
+                "keydown",
+                function g(e: KeyboardEvent) {
+                  // console.log(23);
+
+                  // console.log(e.target)
+                  if (e.key === "Enter") {
+                    if (ev.target instanceof HTMLLabelElement) {
+                      // ev.target.click();
+                      setShowNavMenu(() => {
+                        ev.target.ariaExpanded = "true";
+                        return true;
+                      });
+                      // console.log(showNavMenu);
+                    }
+                  }
+
+                  if (e.key === "Tab") {
+                    console.log(showNavMenu);
+
+                    ev.target.removeEventListener("keydown", g);
+                    // console.log(
+                    //   document.body
+                    //     .querySelector("div.nav-menu")
+                    //     ?.querySelector("button")
+                    // );
+                  }
+                }
+              );
+            }}
           >
             <Image
               src={"/main/Menu.png"}
@@ -107,7 +151,10 @@ export default function MainHeader() {
               />
             </div>
           </div>
-          <div className="relative w-[45px] h-[45px]">
+          <Link
+            href={"/cart"}
+            className="relative w-[45px] h-[45px] hover:scale-105 active:scale-95 transition-transform cursor-pointer"
+          >
             <Image
               src={"/main/Cart.png"}
               width={45}
@@ -117,7 +164,7 @@ export default function MainHeader() {
             <div className="absolute bg-[#FF7622]  box-border h-[25px] w-[25px] rounded-2xl text-center top-[-4px] right-0">
               <div className="text-white font-bold text-[16px]">{n}</div>
             </div>
-          </div>
+          </Link>
         </div>
       </header>
     </>

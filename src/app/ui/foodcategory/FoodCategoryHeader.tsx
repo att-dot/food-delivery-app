@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import Filter from "../restaurantPage/Filter";
 
 export default function FoodCategoryHeader({
   foodCategory,
 }: {
   foodCategory: string;
 }) {
+  const [showFillter, setShowFilter] = useState(false);
   const categories = [
     "Pizza",
     "Snacks",
@@ -19,6 +24,13 @@ export default function FoodCategoryHeader({
     : "";
   return (
     <header className="flex ">
+      {showFillter && (
+        <Filter
+          onClose={() => {
+            setShowFilter(false);
+          }}
+        />
+      )}
       <Link
         href={"/"}
         className="w-[45px] h-[45px] mr-[17px] bg-[#ECF0F4] rounded-4xl flex justify-center items-center cursor-pointer hover:scale-110 active:scale-95 transition-transform"
@@ -57,20 +69,33 @@ export default function FoodCategoryHeader({
           ))}
         </section>
       </label>
-
-      <Image
-        src={"/foodcategory/SearchBlackbg.png"}
-        width={46}
-        height={46}
-        alt="search"
-        className="mr-[10px]"
-      />
-      <Image
-        src={"/foodcategory/Filter.png"}
-        width={46}
-        height={46}
-        alt="search"
-      />
+      <Link
+        href={"/search"}
+        hrefLang="en"
+        className="mr-[10px] hover:scale-110 active:scale-95 transition-all"
+      >
+        <Image
+          src={"/foodcategory/SearchBlackbg.png"}
+          width={46}
+          height={46}
+          alt="search"
+        />
+      </Link>
+      <button
+        type="button"
+        title="open filter"
+        className="hover:scale-110 active:scale-95 transition-all"
+        onClick={() => {
+          setShowFilter(true);
+        }}
+      >
+        <Image
+          src={"/foodcategory/Filter.png"}
+          width={46}
+          height={46}
+          alt="search"
+        />
+      </button>
     </header>
   );
 }

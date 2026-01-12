@@ -20,7 +20,7 @@ export default function Page({}) {
       </div> */
       }
       {/* <link rel="icon" href="/Logo.ico" sizes="any" /> */}
-      <div className="grid w-[375px] overflow-hidden justify-self-center box-border pl-6 pt-[5px] mt-[50px]">
+      <div className="grid w-[375px] overflow-hidden justify-self-center box-border pl-6 pt-[5px] ">
         <MainHeader />
 
         <MainMain />
