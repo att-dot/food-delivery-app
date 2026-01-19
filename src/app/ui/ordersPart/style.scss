@@ -1,0 +1,50 @@
+// .ongoing::after,
+// .history::after {
+//   width: 100%;
+//   display: block;
+//   height: 2px;
+//   background-color: #ff7622;
+//   position: absolute;
+//   bottom: -1px;
+//   z-index: 10;
+//   transform: translateX(100%);
+//   transition: all 0.3s ease-in;
+// }
+
+// .chosen {
+//   position: relative;
+// }
+// .chosen::after {
+//   content: "";
+//   transform: translateX(0%);
+//   transition: all 0.3s ease-in;
+// }
+
+.history:hover,
+.ongoing:hover {
+
+  background: linear-gradient(#ff772200 30%, #ff772213 80%, #ff77221f 100%);
+}
+
+
+nav {
+  position: relative;
+  transition: all 0.3s ease-in;
+}
+nav::after {
+  content: "";
+  width: calc(50% - 12px) ;
+  display: block;
+  height: 2px;
+  background-color: #ff7622;
+  position: absolute;
+  bottom: -1px;
+  z-index: 10;
+  left: 0px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.navHistory::after {
+  left: calc(50% + 12px);
+}

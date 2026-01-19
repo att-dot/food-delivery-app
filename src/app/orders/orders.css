@@ -1,0 +1,20 @@
+
+.red {
+  background-color: red;
+}
+
+@media (width > 760px) {
+  .md-line-bg {
+    border-image: linear-gradient(
+        to right,
+        #ced7df00 0%,
+        #ced7df 20%,
+        #ced7df 80%,
+        #ced7df00 100%
+      )
+      1;
+    border-radius: 5px; /* this doesn't work */
+    border-bottom-width: 1px;
+    border-style: solid;
+  }
+}
