@@ -89,7 +89,7 @@ export default function MainHeader() {
               className="peer"
               type="checkbox"
               checked={showNavMenu}
-              onChange={(e) => {
+              onChange={() => {
                 setShowNavMenu(!showNavMenu);
                 px.current = scrollY;
               }}

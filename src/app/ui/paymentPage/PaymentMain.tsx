@@ -6,7 +6,7 @@ import Payment from "./Payment";
 
 export default function PaymentMain() {
   const [chosenMethod, setchosenMethod] = useState("");
-  const [card, setCard] = useState("");
+  const [card] = useState("");
   const cards: PCard[] = [
     { URL: "/paymentPage/Cash.png", title: "Cash", width: 24, height: 24 },
     { URL: "/paymentPage/Visa.png", title: "Visa", width: 41, height: 13 },

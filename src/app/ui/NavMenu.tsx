@@ -35,7 +35,7 @@ export default function NavMenu({
         "nav-menu flex fixed transition-all duration-500  top-[0px] w-full h-full  backdrop-blur-2xl bg-[#ffffff80]  z-50 flex-col pt-[50px] items-start  gap-7 translate-x-[-100vw] " +
         (isClosed ? "translate-x-[-100vw] " : " translate-x-[0px] ")
       }
-      onScroll={(_e) => {}}
+      onScroll={() => {}}
       aria-modal="true"
       role="dialog"
       // tabIndex={-1}

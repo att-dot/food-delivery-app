@@ -5,7 +5,6 @@ import { FocusEvent, useState } from "react";
 import { createPortal } from "react-dom";
 import Button from "../onboarding/Button";
 
-
 export default function Filter({ onClose }: { onClose: () => void }) {
   const offers = ["Delivery", "Pick Up", "Offer", "Online Payment available"];
   const deliveytimes = ["10-15 min", "20 min", "30 min"];
@@ -50,27 +49,25 @@ export default function Filter({ onClose }: { onClose: () => void }) {
             OFFERS
           </h3>
           <section className="flex flex-wrap gap-x-[16px] gap-y-[9px]">
-            {offers.map((el, i) => (
-              
-                <label
-                  className={`text-[#464E57] select-none text-[16px] font-normal tracking-[-0.33px] has-checked:text-white has-checked:bg-[#F58D1D] has-checked:border-0 has-checked:p-[11px_17px] transition-colors cursor-pointer box-border w-fit h-[46px] p-[9px_15px] rounded-[33px] border-2 border-[#EDEDED] focus-visible:border-[#8a8a8a]`}
-                  htmlFor={el + "offers"}
+            {offers.map((el) => (
+              <label
+                className={`text-[#464E57] select-none text-[16px] font-normal tracking-[-0.33px] has-checked:text-white has-checked:bg-[#F58D1D] has-checked:border-0 has-checked:p-[11px_17px] transition-colors cursor-pointer box-border w-fit h-[46px] p-[9px_15px] rounded-[33px] border-2 border-[#EDEDED] focus-visible:border-[#8a8a8a]`}
+                htmlFor={el + "offers"}
+                tabIndex={0}
+                key={el}
+                onFocus={handleLabelFocus}
+              >
+                <input
+                  type="checkbox"
+                  hidden
+                  name={el.split(" ").join("")}
+                  className={""}
                   tabIndex={0}
-                  key={el}
-                  onFocus={handleLabelFocus}
-                >
-                  <input
-                    type="checkbox"
-                    hidden
-                    name={el.split(" ").join("")}
-                    className={""}
-                    tabIndex={0}
-                    id={el + "offers"}
-                    onChange={console.log}
-                  />
-                  {el}
-                </label>
-              
+                  id={el + "offers"}
+                  onChange={console.log}
+                />
+                {el}
+              </label>
             ))}
           </section>
         </section>
@@ -191,7 +188,7 @@ export default function Filter({ onClose }: { onClose: () => void }) {
         <Button textContent="FILTER" className="w-[307px] text-[16px]" />
       </form>
     </div>,
-    document.body
+    document.body,
   );
 }
 

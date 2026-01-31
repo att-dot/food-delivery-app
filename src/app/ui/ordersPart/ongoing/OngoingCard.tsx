@@ -7,7 +7,6 @@ export default function OngoingCard({
   items,
   code,
   price,
-  pictureURl,
   isHistoryCard = false,
   date,
   status,

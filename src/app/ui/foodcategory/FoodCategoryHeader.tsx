@@ -19,9 +19,9 @@ export default function FoodCategoryHeader({
     "Ice creams",
     "Boxes",
   ];
-  foodCategory.includes("%20")
-    ? (foodCategory = foodCategory.split("%20").join(" "))
-    : "";
+  if (foodCategory.includes("%20"))
+    foodCategory = foodCategory.split("%20").join(" ");
+
   return (
     <header className="flex sx:w-[450px] justify-around">
       {showFillter && (

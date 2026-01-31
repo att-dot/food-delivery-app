@@ -17,7 +17,7 @@ export default function MainRestaurantCard({
   deliveryPrice,
   deliveryTime,
   grade,
-  imgURL,
+
 }: Restaurant) {
   return (
     <>

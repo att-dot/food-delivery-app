@@ -6,7 +6,6 @@ export default function CartMain({
 }: {
   isEditing?: boolean;
 }) {
-  const items = {};
   return (
     <main>
       <form className="flex gap-[32px] flex-col">

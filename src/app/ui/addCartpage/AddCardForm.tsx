@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useRef, useState } from "react";
 import Button from "../onboarding/Button";
 export default function AddCardForm() {
   // const [placeholder, setPlaceholder] = useState(["____", "____", "____"]);
@@ -17,7 +11,7 @@ export default function AddCardForm() {
     .map((_arr, i) =>
       cellsNum - (i + 1) * 4 >= 0
         ? Array(4).fill("")
-        : Array(4 + (cellsNum - (i + 1) * 4)).fill("")
+        : Array(4 + (cellsNum - (i + 1) * 4)).fill(""),
     )
     .reverse()
     .map((arr, i) => (
@@ -61,10 +55,8 @@ export default function AddCardForm() {
                 const plainLength = e.currentTarget.textContent
                   .split(" ")
                   .join("").length;
-                plainLength % 4 === 0 && plainLength / 4 !== 3
-                  ? (e.currentTarget.textContent += "   ")
-                  : "";
-                console.log(23232);
+                if (plainLength % 4 === 0 && plainLength / 4 !== 3)
+                  e.currentTarget.textContent += "   ";
               }}
             ></div>
             <span>{line}</span>
@@ -168,12 +160,12 @@ export default function AddCardForm() {
 
 function expireInputOnChange(
   setExpireInpValue: Dispatch<SetStateAction<string>>,
-  e: ChangeEvent<HTMLInputElement>
+  e: ChangeEvent<HTMLInputElement>,
 ) {
   const justNums = Array.prototype.reduce.call(
     e.target.value,
     (state, CurVal: string) => (CurVal !== "/" ? state + CurVal : state),
-    ""
+    "",
   ) as string;
   console.log(justNums);
   if (justNums.length > 6) {
