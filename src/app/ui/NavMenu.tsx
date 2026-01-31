@@ -67,6 +67,30 @@ export default function NavMenu({
         ));
       })()}
     </dialog>,
-    document.body
+    document.body,
+  );
+}
+
+export function PCNavMenu({}) {
+  const links = {
+    main: "/",
+    food: "/food-category/Burgers",
+    search: "/search",
+  };
+  return (
+    <nav className="grid grid-cols-3 justify-items-center items-center relative">
+      {(function (): ReactNode {
+        return Object.entries(links).map(([name, link]) => (
+          <Link
+            key={name}
+            href={link}
+            // tabIndex={0}
+            className=" justify-self-center text-center text-xl font-normal hover:font-bold active:font-bold active:bg-[#FF7622] active:text-white hover:bg-[#FF7622] active:scale-95 hover:scale-105 active:saturate-[90%]  hover:text-white transition-all w-full leading-[3.5rem] h-full text-[#111]"
+          >
+            {name}
+          </Link>
+        ));
+      })()}
+    </nav>
   );
 }

@@ -23,7 +23,7 @@ export default function FoodCategoryHeader({
     ? (foodCategory = foodCategory.split("%20").join(" "))
     : "";
   return (
-    <header className="flex ">
+    <header className="flex sx:w-[450px] justify-around">
       {showFillter && (
         <Filter
           onClose={() => {

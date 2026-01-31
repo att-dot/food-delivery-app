@@ -21,11 +21,11 @@ export default function SectionRestaurants() {
   ];
 
   return (
-    <section className="mt-8 w-full">
+    <section className="mt-8 w-full ">
       <h1 className="text-[20px] font-normal leading-6 text-[#32343E] select-none">
         Suggested Restaurants
       </h1>
-      <section className="flex flex-col not mt-[20px]">
+      <section className="flex  flex-col sx:flex-row sx:flex-wrap sx:gap-5 sx:justify-around mt-[20px]">
         {restaurantArr.map((restaurant) => (
           <SectionRestaurantItem
             restaurant={restaurant}

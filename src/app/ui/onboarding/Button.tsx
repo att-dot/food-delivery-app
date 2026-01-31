@@ -1,5 +1,7 @@
 "use client";
 
+import { MouseEvent, MouseEventHandler } from "react";
+
 export default function Button({
   onClick = () => {},
   className = "",
@@ -9,7 +11,9 @@ export default function Button({
   textColorCSS,
   functionalCSS,
 }: {
-  onClick?: () => void;
+  onClick?:
+    | (() => void)
+    | ((e: MouseEvent<HTMLButtonElement>) => void);
   className?: string;
   textContent?: string;
   disabled?: boolean;

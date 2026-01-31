@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function SearchHeader() {
   const n = 2;
   return (
-    <header className="grid w-full grid-cols-[min-content_1fr_2fr] justify-center items-center">
+    <header className="grid w-[max(min(100%,_500px),375px)] grid-cols-[min-content_1fr_2fr] justify-center items-center">
       <Link
         href={"/"}
         className="w-[45px] h-[45px] bg-[#ECF0F4] rounded-4xl flex justify-center items-center cursor-pointer hover:scale-110 active:scale-95 transition-transform"

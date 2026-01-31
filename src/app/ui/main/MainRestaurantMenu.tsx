@@ -26,6 +26,38 @@ export const restaurants: Restaurant[] = [
     grade: 4,
     imgURL: "",
   },
+  {
+    name: "Spicy Burger Shop",
+    tags: ["Burger", "Chiken", "Riche", "Wings"],
+    deliveryTime: 10 * 60,
+    deliveryPrice: 100,
+    grade: 4.3,
+    imgURL: "",
+  },
+  {
+    name: "Cafenio Coffee Club",
+    tags: ["Burger", "Chiken", "Riche", "Wings"],
+    deliveryTime: 34 * 60,
+    deliveryPrice: 300,
+    grade: 4,
+    imgURL: "",
+  },
+  {
+    name: "Spicy Burger Shop",
+    tags: ["Burger", "Chiken", "Riche", "Wings"],
+    deliveryTime: 10 * 60,
+    deliveryPrice: 100,
+    grade: 4.3,
+    imgURL: "",
+  },
+  {
+    name: "Cafenio Coffee Club",
+    tags: ["Burger", "Chiken", "Riche", "Wings"],
+    deliveryTime: 34 * 60,
+    deliveryPrice: 300,
+    grade: 4,
+    imgURL: "",
+  },
 ];
 
 export default function MainRestaurantMenu({
@@ -35,7 +67,7 @@ export default function MainRestaurantMenu({
 }) {
   return (
     <>
-      <section className="grid grid-cols-[2fr_1fr] w-[327px] grid-rows-[auto_auto] gap-y-[20px] mt-8">
+      <section className="grid grid-cols-[2fr_1fr] w-[max(327px,_100%)] grid-rows-[auto_auto] gap-y-[20px] mt-8">
         <h1 className=" text-[20px] text-[#32343E]">Open Restaurants</h1>
         {seeAllVisible ? (
           <Link
@@ -48,9 +80,9 @@ export default function MainRestaurantMenu({
         ) : (
           ""
         )}
-        <section className="col-span-2 flex gap-[28px] flex-col">
-          {restaurants.map((restaurant) => (
-            <MainRestaurantCard {...restaurant} key={restaurant.name} />
+        <section className="col-span-2 flex gap-[28px] flex-wrap justify-around">
+          {restaurants.map((restaurant, i) => (
+            <MainRestaurantCard {...restaurant} key={restaurant.name + i} />
           ))}
         </section>
       </section>

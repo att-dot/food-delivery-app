@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import { createPortal } from "react-dom";
 import Button from "../onboarding/Button";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function PlaceOrder({}) {
   const [address, setAddress] = useState("2118 Thornridge Cir. Syracuse");
+  const router = useRouter();
   const sum = "96";
   return (
     <section className="fixed w-[375px] box-border p-[24px] self-center bottom-0 grid gap-y-[30px] grid-cols-[1fr_1fr] bg-white rounded-[24px_24px_0px_0px]">
@@ -49,7 +52,17 @@ export default function PlaceOrder({}) {
       <Button
         className="col-span-2 text-[14px] leading-[auto] tracking-normal"
         textContent="PLACE ORDER"
+        onClick={(e: MouseEvent<HTMLButtonElement>) => {
+          e.preventDefault();
+          router.push("/payment");
+        }}
       />
+      {/* <Link
+        href={"/payment"}
+        className="col-span-2 text-[14px] leading-[auto] tracking-normal"
+      >
+        PLACE ORDER
+      </Link> */}
     </section>
   );
 }

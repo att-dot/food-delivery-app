@@ -26,11 +26,35 @@ export default function OngoingMain() {
       price: "$100.25",
       pictureURl: "",
     },
+     {
+      type: "Food",
+      restaurantName: "Pizza Hut",
+      items: "3",
+      code: "#937471",
+      price: "$35.25",
+      pictureURl: "",
+    },
+    {
+      type: "Drink",
+      restaurantName: "McDonald",
+      items: "2",
+      code: "#209875",
+      price: "$65.25",
+      pictureURl: "",
+    },
+    {
+      type: "Food",
+      restaurantName: "Vkusno i tochka",
+      items: "1",
+      code: "#111113",
+      price: "$100.25",
+      pictureURl: "",
+    },
   ];
   return (
     <section aria-label="Ongoing orders" className="w-full">
       {data.map((data) => (
-        <OngoingCard {...data} />
+        <OngoingCard {...data} key={data.code} />
       ))}
     </section>
   );

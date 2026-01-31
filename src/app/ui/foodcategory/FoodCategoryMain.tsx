@@ -12,11 +12,11 @@ export default function FoodCategoryMain({
   console.log(window.history)
   return (
     <main className="mt-[24px]">
-      <section>
+      <section className="flex flex-col">
         <h1 className="mb-6 text-[20px] font-normal">Popular {foodCategory}</h1>
-        <section className=" flex flex-wrap gap-5 w-[327px]">
-          {arr.map((food) => (
-            <PopFoodCard food={food} foodCategory={foodCategory} key={food}/>
+        <section className=" flex flex-wrap gap-5 w-[max(327px,_100%)] justify-center">
+          {arr.map((food, i) => (
+            <PopFoodCard food={food} foodCategory={foodCategory} key={food+i}/>
           ))}
         </section>
       </section>

@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function Page({}) {
   const [inputValue, setInputValue] = useState("");
   return (
-    <div className="flex flex-col w-[327px] mt-[50px] justify-self-center">
+    <div className="flex flex-col items-center w-[max(327px,_min(768px,_100%))] mt-[50px] justify-self-center">
       <SearchHeader />
 
       <Input
@@ -17,7 +17,7 @@ export default function Page({}) {
         value={inputValue}
         setValue={setInputValue}
       />
-      <main>
+      <main className="w-full">
         <SectionKeywords
           onKeywordClicked={(keyword: string) => setInputValue(keyword)}
         />

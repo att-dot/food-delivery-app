@@ -25,18 +25,14 @@ export default function layout({ children }: { children: React.ReactNode }) {
           onClick={() => {}}
           className="w-[45px] h-[45px] bg-[#ECF0F4] justify-self-end rounded-4xl flex justify-center items-center cursor-pointer hover:scale-110 active:scale-95 transition-transform"
         >
-          <Image
-            src={"/restaurants/More.png"}
-            width={16}
-            height={2}
-            alt=""
-            className=" "
-          />
+          <Image src={"/restaurants/More.png"} width={16} height={2} alt="" />
         </button>
 
         <OrdersNavLink className="col-span-2 self-end" />
       </header>
-      <main className="w-full pt-[32px] max-w-[700px]">{children}</main>
+      <main className="w-full pt-[32px] max-w-[700px] mb-[50px]">
+        {children}
+      </main>
     </>
   );
 }

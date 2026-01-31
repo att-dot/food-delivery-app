@@ -47,6 +47,7 @@
       transform: translateX(375px);
     }
   }
+  --breakpoint-sx: 450px;
 }
 
 /* .triangle {
@@ -112,13 +113,12 @@ body::-webkit-scrollbar {
 }
 
 .div-bg-hover {
-  
 }
 .div-bg-hover:hover::before {
-content: '';
-width: 400px;
-height: 300px;
-display: block;
-background-color: red;
-position: absolute;
+  content: "";
+  width: 400px;
+  height: 300px;
+  display: block;
+  background-color: red;
+  position: absolute;
 }

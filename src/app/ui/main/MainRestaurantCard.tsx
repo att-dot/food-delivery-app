@@ -23,15 +23,15 @@ export default function MainRestaurantCard({
     <>
       <Link
         href={`/restaurants/${name}`}
-        className="h-[228px] w-full cursor-pointer hover:scale-105 active:scale-95 active:opacity-90 transition-all"
+        className="h-[228px] w-[min(100%,_327px)] cursor-pointer hover:scale-105 active:scale-95 active:opacity-90 transition-all"
       >
-        <div className="w-full h-[137px] relative">
+        <div className="h-[137px] relative size-[327px]">
           <Image
             src={"/main/RestaurantBG.png"}
             fill
             alt="restaurant picture"
             sizes="375px"
-            className="relative object-cover rounded-[10px]"
+            className="relative object-cover rounded-[10px] "
           />
         </div>
         <p className="text-[#181C2E] text-[20px] mt-[8px] leading-[24px]">

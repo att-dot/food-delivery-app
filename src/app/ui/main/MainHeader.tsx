@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import NavMenu from "../NavMenu";
+import NavMenu, { PCNavMenu } from "../NavMenu";
 
 export default function MainHeader() {
   const n = 2;
@@ -32,22 +32,25 @@ export default function MainHeader() {
   if (documentMounted && showNavMenu) {
     console.log(
       document.body.querySelector("div.nav-menu")?.querySelector("button")
-        ?.parentElement
+        ?.parentElement,
     );
 
     const navMenu = document.body.querySelector(
-      "dialog.nav-menu"
+      "dialog.nav-menu",
     ) as HTMLDialogElement;
     navMenu.focus();
   }
   return (
     <>
-      <header className="grid">
-        <div className="absolute">
-          {/* <Link href={'./search'}>Search</Link> */}
-        </div>
-        <div className="relative grid w-[327px] h-[49px] grid-cols-[63px_1fr_45px]">
-          <label
+      <header className="w-full  bg-[#f3f3f3]">
+        {/* <div className="absolute"></div> */}
+        <div className="relative grid w-[max(100%,_327px)] sx:grid-cols-[5fr_3fr_1fr] items-center  h-[55px] grid-cols-[2fr_6fr_1fr]">
+          
+           {(function (){
+            if(window?.screen.width >= 450){
+              return <PCNavMenu />
+            }
+            return <label
             htmlFor="menuButton"
             aria-expanded="false"
             className=" hover:scale-105 active:scale-95 transition-transform cursor-pointer"
@@ -56,17 +59,12 @@ export default function MainHeader() {
               ev.target.addEventListener(
                 "keydown",
                 function g(e: KeyboardEvent) {
-                  // console.log(23);
-
-                  // console.log(e.target)
                   if (e.key === "Enter") {
                     if (ev.target instanceof HTMLLabelElement) {
-                      // ev.target.click();
                       setShowNavMenu(() => {
                         ev.target.ariaExpanded = "true";
                         return true;
                       });
-                      // console.log(showNavMenu);
                     }
                   }
 
@@ -74,13 +72,8 @@ export default function MainHeader() {
                     console.log(showNavMenu);
 
                     ev.target.removeEventListener("keydown", g);
-                    // console.log(
-                    //   document.body
-                    //     .querySelector("div.nav-menu")
-                    //     ?.querySelector("button")
-                    // );
                   }
-                }
+                },
               );
             }}
           >
@@ -101,44 +94,15 @@ export default function MainHeader() {
                 px.current = scrollY;
               }}
             />
-            {/* {showNavMenu && */}
             {documentMounted && (
               <NavMenu
                 onClose={() => setShowNavMenu(false)}
                 isClosed={!showNavMenu}
               />
             )}
-
-            {/* } */}
-            {/* <div className="peer-checked:flex hidden absolut fixed top-[0px] w-full h-full  backdrop-blur-2xl z-50 flex-col justify-center items-center gap-7">
-              <Link
-                href={"./search"}
-                className="text-7xl drop-shadow-xl font-extrabold text-[#111]"
-              >
-                Search
-              </Link>
-              <Link
-                href={"./search"}
-                className="text-7xl drop-shadow-xl font-extrabold text-[#111]"
-              >
-                Search
-              </Link>
-              <Link
-                href={"./search"}
-                className="text-7xl drop-shadow-xl font-extrabold text-[#111]"
-              >
-                Search
-              </Link>
-              <Link
-                href={"./search"}
-                className="text-7xl drop-shadow-xl font-extrabold text-[#111]"
-              >
-                Search
-              </Link>
-            </div> */}
           </label>
-
-          <div className="flex flex-col gap-[3px] w-fit">
+           })()} 
+          <div className="flex flex-col gap-[3px] w-fit sx:justify-self-center">
             <p className="text-[#FC6E2A] font-bold text-[12px] ">DELIVER TO</p>
             <div className=" flex  items-center gap-2 ">
               <p className="text-[#676767] text-[14px]">Halal Lab office</p>
