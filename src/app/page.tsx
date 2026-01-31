@@ -7,7 +7,7 @@ import MainMain from "./ui/main/MainMain";
 
 
 export default function Page({}) {
-  // const tags = ["Burger", "Chiken", "Riche", "Wings"];
+
   
   return (
     <>
