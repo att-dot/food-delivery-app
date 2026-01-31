@@ -91,11 +91,12 @@ export default function AddCardForm() {
                 const plainLength = invInput.current.textContent
                   .split(" ")
                   .join("").length;
-                plainLength % 4 === 0 &&
-                plainLength / 4 !== 3 &&
-                plainLength > 0
-                  ? (invInput.current.textContent += "   ")
-                  : "";
+                if (
+                  plainLength % 4 === 0 &&
+                  plainLength / 4 !== 3 &&
+                  plainLength > 0
+                )
+                  invInput.current.textContent += "   ";
               }
             }
           }}
