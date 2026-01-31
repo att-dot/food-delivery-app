@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import SectionRestaurantItem, { RestaurantView } from "./SectionRestaurantItem";
 
 export default function SectionRestaurants() {

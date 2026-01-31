@@ -2,7 +2,6 @@ import {
   ChangeEvent,
   Dispatch,
   SetStateAction,
-  useEffect,
   useRef,
   useState,
 } from "react";

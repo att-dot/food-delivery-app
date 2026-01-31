@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FocusEvent, useState } from "react";
 import { createPortal } from "react-dom";
 import Button from "../onboarding/Button";
-import z from "zod";
+
 
 export default function Filter({ onClose }: { onClose: () => void }) {
   const offers = ["Delivery", "Pick Up", "Offer", "Online Payment available"];
@@ -12,10 +12,10 @@ export default function Filter({ onClose }: { onClose: () => void }) {
   const pricing = ["$", "$$", "$$$"];
   const [rating, setRating] = useState("");
 
-  const initialBodyStyles = {
-    position: document.body.style.position,
-    height: document.body.style.height,
-  };
+  // const initialBodyStyles = {
+  //   position: document.body.style.position,
+  //   height: document.body.style.height,
+  // };
   document.body.style.height = "100vh";
   document.body.style.position = "fixed";
 

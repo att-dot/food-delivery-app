@@ -1,10 +1,9 @@
 "use client";
 
 import { MouseEvent, useState } from "react";
-import { createPortal } from "react-dom";
 import Button from "../onboarding/Button";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+
 
 export default function PlaceOrder({}) {
   const [address, setAddress] = useState("2118 Thornridge Cir. Syracuse");

@@ -1,11 +1,10 @@
 "use client";
 
-import Input from "./ui/Input";
+
 import MainHeader from "./ui/main/MainHeader";
-import MainRestaurantMenu from "./ui/main/MainRestaurantMenu";
-import MainCategoryMenu from "./ui/main/MainCategoryMenu";
+
 import MainMain from "./ui/main/MainMain";
-import Link from "next/link";
+
 
 export default function Page({}) {
   const tags = ["Burger", "Chiken", "Riche", "Wings"];

@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Card, { PCard } from "./Card";
 import Image from "next/image";
-import Button from "../onboarding/Button";
 import Payment from "./Payment";
 
 export default function PaymentMain() {

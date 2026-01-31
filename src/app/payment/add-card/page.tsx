@@ -4,7 +4,7 @@ import AddCardForm from "@/app/ui/addCartpage/AddCardForm";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
   return (
     <>

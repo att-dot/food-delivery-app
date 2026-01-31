@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import GoBack from "../ui/GoBack";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import OrdersNavLink from "../ui/ordersPart/OrdersNavLink";
 import "./orders.css";
 
 export default function layout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  console.log(pathname);
+  // const pathname = usePathname();
+  // console.log(pathname);
   return (
     <>
       <header className=" grid grid-cols-2 grid-rows-2 border-b-[1px]  border-b-[#CED7DF] w-[100vw] md-line-bg md:border-b-transparent md:w-[768px] pr-[24px] pl-[24px] box-border">

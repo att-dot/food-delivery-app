@@ -24,6 +24,7 @@ export default function CartItem({
 }) {
   console.log(isEditing);
   const [value, setValue] = useState(defaultAmount);
+  console.log(alt)
   return (
     // <Link href={`/food-category/${foodtype}`} className="  w-[147px] h-[182px] pt-[px] drop-shadow-xl rounded-3xl relative flex flex-col items-center justify-end first:ml-[10px] last:mr-[15px] cursor-pointer hover:scale-105 active:scale-95 active:opacity-90 transition-all">
     // <div className=" category-bg  w-[147px] h-[117px] relative">

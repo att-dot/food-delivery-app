@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction} from "react";
 
 export default function Input({
   className,

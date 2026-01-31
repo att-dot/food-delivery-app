@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ChangeEvent } from "react";
+
 
 export interface PCard {
   title: string;

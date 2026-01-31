@@ -1,7 +1,5 @@
 "use client";
 
-import { MouseEvent } from "react";
-
 export default function SectionKeywordsItem({
   keyword,
   onClick,
