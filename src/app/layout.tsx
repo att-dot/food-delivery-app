@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import {  Sen } from "next/font/google";
+import { Sen } from "next/font/google";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/next";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -30,12 +30,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`min-h-[100vh] min-w-[100vw] overflow-x-hidden ` + htmlCl}
+      className={`min-h-screen min-w-screen overflow-x-hidden ` + htmlCl}
     >
       <body
-        className={`${sen.className} bg-white antialiased min-h-[100vh] w-full box-border p-[50px_24px_0px_24px] flex flex-col items-center jus `}
+        className={`${sen.className} bg-white antialiased min-h-screen w-full box-border p-[50px_24px_0px_24px] flex flex-col items-center jus `}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -36,7 +36,7 @@ export default function MainCategoryMenu() {
   ];
   return (
     <>
-      <section className="grid grid-cols-2 w-full grid-rows-[auto_auto] gap-y-[18px] mt-8">
+      <section className="grid grid-cols-2 w-full grid-rows-[auto_auto] gap-y-4.5 mt-8">
         <h1 className="text-[20px] text-[#32343E]">All Categories</h1>
         <Link
           href={"/food-category/burger"}
@@ -45,7 +45,7 @@ export default function MainCategoryMenu() {
           See All
           <span className="border-t-2 border-r-2 border-[#A0A5BA] w-2 h-2 inline-block skew-[5deg] rotate-45"></span>
         </Link>
-        <section className="col-span-2 flex gap-[14px] pb-8 sx:pl-[10px] overflow-x-scroll md:justify-center md:flex-wrap md:overflow-auto overflow-y-hidden w-[max(100%,_337px)] translate-x-[-10px]">
+        <section className="col-span-2 flex gap-3.5 pb-8 sx:pl-2.5 overflow-x-scroll md:justify-center md:flex-wrap md:overflow-auto overflow-y-hidden w-[max(100%,337px)] -translate-x-2.5">
           {categories.map((el, i) => (
             <MainCategoryCard {...el} key={el.foodtype + i} />
           ))}
