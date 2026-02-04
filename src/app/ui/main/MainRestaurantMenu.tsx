@@ -67,7 +67,7 @@ export default function MainRestaurantMenu({
 }) {
   return (
     <>
-      <section className="grid grid-cols-[2fr_1fr] w-[max(327px,_100%)] grid-rows-[auto_auto] gap-y-[20px] mt-8">
+      <section className="grid grid-cols-[2fr_1fr] w-[max(327px,100%)] grid-rows-[auto_auto] gap-y-5 mt-8">
         <h1 className=" text-[20px] text-[#32343E]">Open Restaurants</h1>
         {seeAllVisible ? (
           <Link
@@ -80,7 +80,7 @@ export default function MainRestaurantMenu({
         ) : (
           ""
         )}
-        <section className="col-span-2 flex gap-[28px] flex-wrap justify-around">
+        <section className="col-span-2 flex gap-7 flex-wrap justify-around">
           {restaurants.map((restaurant, i) => (
             <MainRestaurantCard {...restaurant} key={restaurant.name + i} />
           ))}

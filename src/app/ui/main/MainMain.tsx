@@ -12,8 +12,8 @@ export default function MainMain({}) {
       </p>
       <Input className={"mt-4 sx:"} value={inputValue} setValue={setInputValue} />
 
-      <MainCategoryMenu />
-      <MainRestaurantMenu seeAllVisible />
+      {/* <MainCategoryMenu />
+      <MainRestaurantMenu seeAllVisible /> */}
     </main>
   );
 }
