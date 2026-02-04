@@ -10,10 +10,14 @@ export default function MainMain({}) {
       <p className="text-[16px] mt-6">
         Hey Halal, <span className="font-bold">Good Afternoon!</span>
       </p>
-      <Input className={"mt-4 sx:"} value={inputValue} setValue={setInputValue} />
+      <Input
+        className={"mt-4 sx:"}
+        value={inputValue}
+        setValue={setInputValue}
+      />
 
-      {/* <MainCategoryMenu />
-      <MainRestaurantMenu seeAllVisible /> */}
+      <MainCategoryMenu />
+      <MainRestaurantMenu seeAllVisible />
     </main>
   );
 }

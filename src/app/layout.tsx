@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Sen } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// import { Analytics } from "@vercel/analytics/next";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -38,8 +38,8 @@ export default function RootLayout({
         className={`${sen.className} bg-white antialiased min-h-screen w-full box-border p-[50px_24px_0px_24px] flex flex-col items-center jus `}
       >
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {/* <Analytics />
+        <SpeedInsights /> */}
       </body>
     </html>
   );

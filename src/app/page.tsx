@@ -11,6 +11,7 @@ export default function Page({}) {
         <MainHeader />
 
         <MainMain />
+
       </div>
     </>
   );
