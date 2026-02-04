@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import NavMenu, { PCNavMenu } from "../NavMenu";
-
 import dynamic from "next/dynamic";
 
 const DynamicComponentWithNoSSR = dynamic(() => import("./MainHeader"), {
@@ -16,7 +15,7 @@ export default function MainHeader() {
   const [showNavMenu, setShowNavMenu] = useState(false);
   const [documentMounted, setDocumentMounted] = useState(false);
   const px: { current: number } = useRef(0);
-
+  const screenEx = screen || undefined;
   if (documentMounted) {
     const bodyStyle = document.body.style;
     if (showNavMenu) {
@@ -53,7 +52,7 @@ export default function MainHeader() {
         {/* <div className="absolute"></div> */}
         <div className="relative grid w-[max(100%,_327px)] sx:grid-cols-[5fr_3fr_1fr] items-center  h-[55px] grid-cols-[2fr_6fr_1fr]">
           {(function () {
-            if (screen?.width >= 450) {
+            if (screenEx?.width >= 450) {
               return <PCNavMenu />;
             }
             return (
