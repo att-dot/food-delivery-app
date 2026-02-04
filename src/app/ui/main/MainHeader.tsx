@@ -45,63 +45,64 @@ export default function MainHeader() {
       <header className="w-full  bg-[#f3f3f3]">
         {/* <div className="absolute"></div> */}
         <div className="relative grid w-[max(100%,_327px)] sx:grid-cols-[5fr_3fr_1fr] items-center  h-[55px] grid-cols-[2fr_6fr_1fr]">
-          
-           {(function (){
-            if(window?.screen.width >= 450){
-              return <PCNavMenu />
+          {(function () {
+            if (screen?.width >= 450) {
+              return <PCNavMenu />;
             }
-            return <label
-            htmlFor="menuButton"
-            aria-expanded="false"
-            className=" hover:scale-105 active:scale-95 transition-transform cursor-pointer"
-            tabIndex={0}
-            onFocus={(ev) => {
-              ev.target.addEventListener(
-                "keydown",
-                function g(e: KeyboardEvent) {
-                  if (e.key === "Enter") {
-                    if (ev.target instanceof HTMLLabelElement) {
-                      setShowNavMenu(() => {
-                        ev.target.ariaExpanded = "true";
-                        return true;
-                      });
-                    }
-                  }
+            return (
+              <label
+                htmlFor="menuButton"
+                aria-expanded="false"
+                className=" hover:scale-105 active:scale-95 transition-transform cursor-pointer"
+                tabIndex={0}
+                onFocus={(ev) => {
+                  ev.target.addEventListener(
+                    "keydown",
+                    function g(e: KeyboardEvent) {
+                      if (e.key === "Enter") {
+                        if (ev.target instanceof HTMLLabelElement) {
+                          setShowNavMenu(() => {
+                            ev.target.ariaExpanded = "true";
+                            return true;
+                          });
+                        }
+                      }
 
-                  if (e.key === "Tab") {
-                    console.log(showNavMenu);
+                      if (e.key === "Tab") {
+                        console.log(showNavMenu);
 
-                    ev.target.removeEventListener("keydown", g);
-                  }
-                },
-              );
-            }}
-          >
-            <Image
-              src={"/main/Menu.png"}
-              width={45}
-              height={45}
-              alt="menu button"
-            />
-            <input
-              id="menuButton"
-              hidden
-              className="peer"
-              type="checkbox"
-              checked={showNavMenu}
-              onChange={() => {
-                setShowNavMenu(!showNavMenu);
-                px.current = scrollY;
-              }}
-            />
-            {documentMounted && (
-              <NavMenu
-                onClose={() => setShowNavMenu(false)}
-                isClosed={!showNavMenu}
-              />
-            )}
-          </label>
-           })()} 
+                        ev.target.removeEventListener("keydown", g);
+                      }
+                    },
+                  );
+                }}
+              >
+                <Image
+                  src={"/main/Menu.png"}
+                  width={45}
+                  height={45}
+                  alt="menu button"
+                />
+                <input
+                  id="menuButton"
+                  hidden
+                  className="peer"
+                  type="checkbox"
+                  checked={showNavMenu}
+                  onChange={() => {
+                    setShowNavMenu(!showNavMenu);
+                    px.current = scrollY;
+                  }}
+                />
+                {documentMounted && (
+                  <NavMenu
+                    onClose={() => setShowNavMenu(false)}
+                    isClosed={!showNavMenu}
+                  />
+                )}
+              </label>
+            );
+          })()}
           <div className="flex flex-col gap-[3px] w-fit sx:justify-self-center">
             <p className="text-[#FC6E2A] font-bold text-[12px] ">DELIVER TO</p>
             <div className=" flex  items-center gap-2 ">
