@@ -52,8 +52,10 @@ export default function MainHeader() {
         {/* <div className="absolute"></div> */}
         <div className="relative grid w-[max(100%,_327px)] sx:grid-cols-[5fr_3fr_1fr] items-center  h-[55px] grid-cols-[2fr_6fr_1fr]">
           {(function () {
-            if (screenEx?.width >= 450) {
-              return <PCNavMenu />;
+            if (typeof screen !== "undefined") {
+              if (screen.width >= 450) {
+                return <PCNavMenu />;
+              }
             }
             return (
               <label
