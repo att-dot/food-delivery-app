@@ -4,7 +4,7 @@ import Image from "next/image";
 import GoBack from "../ui/GoBack";
 // import { usePathname } from "next/navigation";
 import OrdersNavLink from "../ui/ordersPart/OrdersNavLink";
-import "./orders.css";
+import "@/app/ui/orders.css";
 
 export default function layout({ children }: { children: React.ReactNode }) {
   // const pathname = usePathname();

@@ -5,6 +5,12 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import NavMenu, { PCNavMenu } from "../NavMenu";
 
+import dynamic from "next/dynamic";
+
+const DynamicComponentWithNoSSR = dynamic(() => import("./MainHeader"), {
+  ssr: false,
+});
+
 export default function MainHeader() {
   const n = 2;
   const [showNavMenu, setShowNavMenu] = useState(false);
@@ -42,6 +48,7 @@ export default function MainHeader() {
   }
   return (
     <>
+      <DynamicComponentWithNoSSR />
       <header className="w-full  bg-[#f3f3f3]">
         {/* <div className="absolute"></div> */}
         <div className="relative grid w-[max(100%,_327px)] sx:grid-cols-[5fr_3fr_1fr] items-center  h-[55px] grid-cols-[2fr_6fr_1fr]">
