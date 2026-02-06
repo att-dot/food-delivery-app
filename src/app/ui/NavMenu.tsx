@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { createPortal } from "react-dom";
 
-import { ReactNode} from "react";
+import { ReactNode } from "react";
 
 export default function NavMenu({
   onClose,
@@ -17,6 +17,7 @@ export default function NavMenu({
     food: "/food-category/Burgers",
     main: "/",
     cart: "/cart",
+    history: "/orders/history",
   };
 
   // const px: { current: string } = useRef("");
@@ -76,16 +77,17 @@ export function PCNavMenu({}) {
     main: "/",
     food: "/food-category/Burgers",
     search: "/search",
+    history: "/orders/history",
   };
   return (
-    <nav className="grid grid-cols-3 justify-items-center items-center relative">
+    <nav className="grid grid-cols-4 justify-items-center items-center relative">
       {(function (): ReactNode {
         return Object.entries(links).map(([name, link]) => (
           <Link
             key={name}
             href={link}
             // tabIndex={0}
-            className=" justify-self-center text-center text-xl font-normal hover:font-bold active:font-bold active:bg-[#FF7622] active:text-white hover:bg-[#FF7622] active:scale-95 hover:scale-105 active:saturate-[90%]  hover:text-white transition-all w-full leading-[3.5rem] h-full text-[#111]"
+            className=" justify-self-center text-center text-lg hover:font-bold active:font-bold active:bg-[#FF7622] active:text-white hover:bg-[#FF7622] active:scale-95 hover:scale-105 active:saturate-90 font-semibold hover:text-white transition-all w-full leading-14 h-full text-[#353535]"
           >
             {name}
           </Link>

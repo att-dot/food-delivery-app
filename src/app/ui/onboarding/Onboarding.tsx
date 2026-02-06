@@ -59,7 +59,7 @@ export default function Onboarding({}) {
   ];
   return (
     <>
-      <div className=" flex flex-col items-center min-h-[100vh] justify-center animate-apearpage opacity-0">
+      <div className=" flex flex-col items-center min-h-screen w-full justify-center animate-apearpage opacity-0">
         <div className="items-center justify-items-center w-[324px] flex flex-col relative overflow-hidden">
           <div
             className={

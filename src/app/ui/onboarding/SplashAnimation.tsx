@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function SplashAnimation() {
   return (
-    <div className="min-h-[100vh]  overflow-hidden relative items-center justify-center flex flex-col animate-disapearpage">
+    <div className="min-h-screen w-screen overflow-hidden relative items-center justify-center flex flex-col animate-disapearpage">
       {/* className="animate-disapearpage" */}
       <Image
         src={"/Ellipse 1005.png"}
@@ -13,15 +13,15 @@ export default function SplashAnimation() {
         alt=""
         className="absolute left-[-100] top-[-100] animate-popdown w-auto h-auto float-right"
       />
-      
-        <Image
-          src={"/Logo.png"}
-          width={121.13}
-          height={58.88}
-          alt="food logo"
-          className=""
-        />
-      
+
+      <Image
+        src={"/Logo.png"}
+        width={121.13}
+        height={58.88}
+        alt="food logo"
+        className=""
+      />
+
       <Image
         src={"/Ellipse 1006.png"}
         width={190}

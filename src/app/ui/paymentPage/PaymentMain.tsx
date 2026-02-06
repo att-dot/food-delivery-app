@@ -19,11 +19,11 @@ export default function PaymentMain() {
     { URL: "/paymentPage/paypal.png", title: "Paypal", width: 24, height: 30 },
   ];
   return (
-    <main className="self-start mt-[30px] w-[100%]">
+    <main className="self-start mt-7.5 w-full max-w-3xl md:self-center">
       <form>
         <section
           tabIndex={-1}
-          className="flex gap-[16px] overflow-x-auto w-[calc(100%+24px)] pr-[24px] p-[7px_3px]"
+          className="flex gap-4 overflow-x-auto w-[calc(100%+24px)] pr-6 p-[7px_3px] sx:justify-center"
         >
           {cards.map((card) => (
             <Card
@@ -36,9 +36,9 @@ export default function PaymentMain() {
             />
           ))}
         </section>
-        <section className="pt-[7px]">
+        <section className="pt-1.75">
           {chosenMethod === "" ? (
-            <p className="w-full h-[257px] rounded-[10px] p-[0px_30px] text-wrap text-[#32343E] text-[18px] text-center flex items-center bg-[#F7F8F9]">
+            <p className="w-full h-64.25 rounded-[10px] justify-center p-[0px_30px] text-wrap text-[#32343E] text-[18px] text-center flex items-center bg-[#F7F8F9]">
               Choose the way your are going to pay
             </p>
           ) : (
@@ -47,32 +47,32 @@ export default function PaymentMain() {
           {["Mastercard", "Visa", "Paypal"].includes(chosenMethod) &&
             card === "" && (
               <>
-                <div className="w-full h-[257px] box-border p-[29px_30px] rounded-[10px] bg-[#F7F8F9] flex flex-col items-center ">
+                <div className="w-full h-64.25 box-border p-[29px_30px] rounded-[10px] bg-[#F7F8F9] flex flex-col items-center ">
                   <Image
                     src="/paymentPage/Card.png"
                     width={505}
                     height={319}
                     alt=""
-                    className="w-[166px] drop-shadow-2xl"
+                    className="w-41.5 drop-shadow-2xl"
                   />
-                  <p className="text-[#32343E] text-[16px] font-bold mt-[23px]">
+                  <p className="text-[#32343E] text-[16px] font-bold mt-5.75">
                     No {chosenMethod.toLocaleLowerCase()} added
                   </p>
-                  <p className="text-[#2D2D2D] text-[15px] font-nq leading-[24px] tracking-[0.5px] mt-[6px] text-center">
+                  <p className="text-[#2D2D2D] text-[15px] font-nq leading-6 tracking-[0.5px] mt-1.5 text-center">
                     You can add a card and save it for later
                   </p>
                 </div>
                 <button
                   type="button"
                   title="add new card"
-                  className="w-full h-[62px] flex items-center justify-center text-[14px] font-bold gap-[10px] hover:bg-[#FF762210] active:border-[#FF7622] active:border-2  active:bg-white transition-all hover:border-transparent mt-[15px] text-[#FF7622] border-2 border-[#F0F5FA] rounded-[10px] bg-transparent"
+                  className="w-full h-15.5 flex items-center justify-center text-[14px] font-bold gap-2.5 hover:bg-[#FF762210] active:border-[#FF7622] active:border-2  active:bg-white transition-all hover:border-transparent mt-3.75 text-[#FF7622] border-2 border-[#F0F5FA] rounded-[10px] bg-transparent"
                 >
                   <Image
                     src={"/paymentPage/plus.png"}
                     width={512}
                     height={512}
                     alt=""
-                    className="size-[13px]"
+                    className="size-3.25"
                   />
                   ADD NEW
                 </button>

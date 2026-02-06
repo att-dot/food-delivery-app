@@ -13,17 +13,17 @@ export default function Input({
   // const [inputValue, setInputValue] = useState(value);
 
   return (
-    <div className={className}>
+    <div className={'flex justify-center ' + className }>
       <label
         htmlFor="i123"
-        className="flex  items-center w-[327px] h-[62] bg-[#F6F6F6] rounded-[10px] box-border gap-[12px] p-[0px_20px_0px_20px]"
+        className="flex  items-center w-81.75 h-[62] bg-[#F6F6F6] rounded-[10px] box-border gap-3 p-[0px_20px_0px_20px]"
       >
         <Image
           src={"/main/Search.png"}
           width={15}
           height={15}
           alt="search"
-          className=" w-[15px] h-[15px]"
+          className=" w-3.75 h-3.75"
         />
         <input
           id="i123"

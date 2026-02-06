@@ -4,11 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import NavMenu, { PCNavMenu } from "../NavMenu";
-// import dynamic from "next/dynamic";
-
-// const DynamicComponentWithNoSSR = dynamic(() => import("./MainHeader"), {
-//   ssr: false,
-// });
 
 export default function MainHeader() {
   const n = 2;
@@ -51,7 +46,7 @@ export default function MainHeader() {
         <div className="relative grid w-[max(100%,327px)] sx:grid-cols-[5fr_3fr_1fr] items-center  h-13.75 grid-cols-[2fr_6fr_1fr]">
           {(function () {
             if (documentMounted) {
-              if (screen.width >= 450) {
+              if (screen.width >= 600) {
                 return <PCNavMenu />;
               }
             }
