@@ -16,7 +16,8 @@ export default function MainCategoryMenu() {
     {
       foodtype: "Potatoes",
       startingPrice: 15,
-    },{
+    },
+    {
       foodtype: "Burger",
       startingPrice: 40,
     },
@@ -27,12 +28,11 @@ export default function MainCategoryMenu() {
     {
       foodtype: "Potatoes",
       startingPrice: 15,
-    },{
+    },
+    {
       foodtype: "Burger",
       startingPrice: 40,
     },
-   
-    
   ];
   return (
     <>
@@ -40,6 +40,7 @@ export default function MainCategoryMenu() {
         <h1 className="text-[20px] text-[#32343E]">All Categories</h1>
         <Link
           href={"/food-category/burger"}
+          aria-label="see all restaurants"
           className="text-[333333] p-[0px_10px] rounded-[15px] hover:bg-[#f0f0f0] active:opacity-80 active:scale-95 transition-all  flex items-center gap-2.5 justify-self-end"
         >
           See All

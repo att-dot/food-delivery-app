@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Filter from "../restaurantPage/Filter";
+import SelectCategoryInput from "./SelectCategoryInput";
 
 export default function FoodCategoryHeader({
   foodCategory,
@@ -19,11 +20,12 @@ export default function FoodCategoryHeader({
     "Ice creams",
     "Boxes",
   ];
-  if (foodCategory.includes("%20"))
+  if (foodCategory.includes("%20")) {
     foodCategory = foodCategory.split("%20").join(" ");
+  }
 
   return (
-    <header className="flex sx:w-[450px] justify-around">
+    <header className="flex sx:w-112.5 justify-around">
       {showFillter && (
         <Filter
           onClose={() => {
@@ -33,26 +35,22 @@ export default function FoodCategoryHeader({
       )}
       <Link
         href={"/"}
-        className="w-[45px] h-[45px] mr-[17px] bg-[#ECF0F4] rounded-4xl flex justify-center items-center cursor-pointer hover:scale-110 active:scale-95 transition-transform"
+        className="w-11.25 h-11.25 mr-4.25 bg-[#ECF0F4] rounded-4xl flex justify-center items-center cursor-pointer hover:scale-110 active:scale-95 transition-transform"
       >
         <span className="border-t-2 border-r-2 ml-1 border-[#181C2E] w-2 h-2 inline-block skew-[5deg] rotate-[-135deg]"></span>
       </Link>
 
       <label
         htmlFor="select-food-category"
-        className="flex justify-between relative group  mr-[61px] active: items-center gap-[7px] w-[102px] h-[45px] box-border p-[16px_17px] rounded-4xl border border-[#ECF0F4] text-[12px] font-bold text-[#181C2E] select-none"
+        className="flex justify-between relative group  mr-15.25 active: items-center gap-1.75 w-25.5 h-11.25 box-border p-[16px_17px] rounded-4xl border border-[#ECF0F4] text-[12px] font-bold text-[#181C2E] select-none"
       >
-        <input
-          type="checkbox"
-          className="hidden peer"
-          id="select-food-category"
-        />
+        <SelectCategoryInput />
         {foodCategory.length > 7
           ? foodCategory.substring(0, 6).toUpperCase() + "..."
           : foodCategory.toUpperCase()}
 
-        <div className="group-hover:border-l-[#c2813b] h-0 rotate-[-90deg] inline-block peer-checked:rotate-[90deg] border-[6px_0px_6px_7px] border-l-[#F58D1D] border-transparent w-2"></div>
-        <section className="z-50 absolute top-[50] box-border p-[18px_0px] left-0 h-auto w-[200px] peer-checked:block hidden bg-[#98a8b836] rounded-4xl overflow-hidden backdrop-blur-2xl">
+        <div className="group-hover:border-l-[#c2813b] h-0 -rotate-90 inline-block peer-checked:rotate-90 border-[6px_0px_6px_7px] border-l-[#F58D1D] border-transparent w-2"></div>
+        <section className="z-50 absolute top-[50] box-border p-[18px_0px] left-0 h-auto w-50 peer-checked:block hidden bg-[#98a8b836] rounded-4xl overflow-hidden backdrop-blur-2xl">
           {categories.map((category) => (
             <Link
               href={`./${category}`}
@@ -72,7 +70,7 @@ export default function FoodCategoryHeader({
       <Link
         href={"/search"}
         hrefLang="en"
-        className="mr-[10px] hover:scale-110 active:scale-95 transition-all"
+        className="mr-2.5 hover:scale-110 active:scale-95 transition-all"
       >
         <Image
           src={"/foodcategory/SearchBlackbg.png"}
