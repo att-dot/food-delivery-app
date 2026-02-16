@@ -41,18 +41,18 @@ export default function Card({
       >
         <div
           className={
-            "w-[85px] h-[72px] relative bg-[#F0F5FA] flex justify-center transition-[background] items-center rounded-[10px] box-border" +
+            "w-21.25 h-18 relative bg-[#F0F5FA] flex justify-center transition-[background] items-center rounded-[10px] box-border" +
             (checked ? " border-2 border-[#FF7622] bg-white  " : "")
           }
         >
-          <Image src={URL} width={width} height={height} alt="" className=" " />
+          <Image src={URL} width={width} height={height} alt="" className="w-auto"/>
           <Image
             src={"/paymentPage/selected.png"}
             width={44}
             height={33}
             alt=""
             className={
-              "hidden absolute top-[-7px] right-[-3px] scale-0 transition-transform size-[24px] box-border border-2 border-white p-[6px_5px] bg-[#FF7622] rounded-2xl" +
+              "hidden absolute -top-1.75 -right-0.75 scale-0 transition-transform size-6 box-border border-2 border-white p-[6px_5px] bg-[#FF7622] rounded-2xl" +
               (checked ? " inline-block scale-100 " : "")
             }
           />
